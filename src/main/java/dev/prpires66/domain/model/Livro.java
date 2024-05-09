@@ -9,7 +9,7 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_livro")
-    private int idLivro;
+    private Long idLivro;
 
     @Column(name = "titulo", nullable = false)
     private String titulo;
@@ -23,12 +23,12 @@ public class Livro {
     @Column(name = "link_imagem", nullable = false)
     private String linkImagem;
 
-    public int getIdLivro() {
+    public Long getIdLivro() {
         return idLivro;
     }
 
-    public void setIdLivro(int idLivro) {
-        this.idLivro = idLivro;
+    public void setIdLivro(Long id) {
+        this.idLivro = id;
     }
 
     public String getTitulo() {

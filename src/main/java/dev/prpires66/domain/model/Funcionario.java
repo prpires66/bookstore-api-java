@@ -9,7 +9,7 @@ public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_funcionario")
-    private int idFuncionario;
+    private Long idFuncionario;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -20,12 +20,12 @@ public class Funcionario {
     @Column(name = "senha", nullable = false)
     private String senha;
 
-    public int getIdFuncionario() {
+    public Long getIdFuncionario() {
         return idFuncionario;
     }
 
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
+    public void setIdFuncionario(Long id) {
+        this.idFuncionario = id;
     }
 
     public String getNome() {
