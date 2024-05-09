@@ -4,10 +4,10 @@ import dev.prpires66.domain.model.Funcionario;
 
 import java.util.List;
 
-public interface UserService   {
+public interface FuncionarioService   {
     Funcionario findById(Long id);
     List<Funcionario> findAll();
-    Funcionario create(Funcionario userToCreate);
+    Funcionario create(Funcionario funcionarioToCreate);
     void delete(Long id);
-    Funcionario update(Long id, Funcionario userToUpdate);
+    Funcionario update(Long id, Funcionario funcionarioToUpdate);
 }

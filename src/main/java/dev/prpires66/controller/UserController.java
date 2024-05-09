@@ -1,7 +1,7 @@
 package dev.prpires66.controller;
 
 import dev.prpires66.domain.model.Funcionario;
-import dev.prpires66.service.UserService;
+import dev.prpires66.service.FuncionarioService;
 import org.apache.catalina.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,45 +14,45 @@ import java.util.List;
 @RequestMapping("/funcionarios")
 public class UserController {
 
-    private final UserService userService;
+    private final FuncionarioService funcionarioService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public UserController(FuncionarioService funcionarioService) {
+        this.funcionarioService = funcionarioService;
     }
 
     @GetMapping
     public ResponseEntity<List<Funcionario>> findAll() {
-        var users = userService.findAll();
-        return ResponseEntity.ok(users);
+        var funcionarios = funcionarioService.findAll();
+        return ResponseEntity.ok(funcionarios);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Funcionario> findById(@PathVariable Long id) {
-        var user = userService.findById(id);
-        return ResponseEntity.ok(user);
+        var funcionario = funcionarioService.findById(id);
+        return ResponseEntity.ok(funcionario);
     }
 
     @PostMapping
-    public ResponseEntity<Funcionario> create(@RequestBody Funcionario userToCreate) {
-        var userCreated = userService.create(userToCreate);
+    public ResponseEntity<Funcionario> create(@RequestBody Funcionario funcionarioToCreate) {
+        var funcionarioCreated = funcionarioService.create(funcionarioToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(userCreated.getIdFuncionario())
+                .buildAndExpand(funcionarioCreated.getIdFuncionario())
                 .toUri();
-        return ResponseEntity.created(location).body(userCreated);
+        return ResponseEntity.created(location).body(funcionarioCreated);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Funcionario> update(@PathVariable Long id,  @RequestBody Funcionario userToUpdate) {
-        var user = this.userService.update(id, userToUpdate);
-        return ResponseEntity.ok(user);
+    public ResponseEntity<Funcionario> update(@PathVariable Long id,  @RequestBody Funcionario funcionarioToUpdate) {
+        var funcionario = this.funcionarioService.update(id, funcionarioToUpdate);
+        return ResponseEntity.ok(funcionario);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Funcionario> delete(@PathVariable Long id) {
-        var user = this.userService.findById(id);
-        this.userService.delete(id);
-        return ResponseEntity.ok(user);
+        var funcionario = this.funcionarioService.findById(id);
+        this.funcionarioService.delete(id);
+        return ResponseEntity.ok(funcionario);
     }
 
 }
