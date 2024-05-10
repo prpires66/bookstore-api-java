@@ -2,7 +2,6 @@ package dev.prpires66.controller;
 
 import dev.prpires66.domain.model.Funcionario;
 import dev.prpires66.service.FuncionarioService;
-import org.apache.catalina.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -12,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/funcionarios")
-public class UserController {
+public class FuncionarioController {
 
     private final FuncionarioService funcionarioService;
 
-    public UserController(FuncionarioService funcionarioService) {
+    public FuncionarioController(FuncionarioService funcionarioService) {
         this.funcionarioService = funcionarioService;
     }
 
