@@ -31,7 +31,7 @@ public class LivroController {
         return ResponseEntity.ok(livro);
     }
 
-    @PostMapping
+    @PostMapping("/Cadastrar")
     public ResponseEntity<Livro> create(@RequestBody Livro livroToCreate) {
         var livroCreated = livroService.create(livroToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()

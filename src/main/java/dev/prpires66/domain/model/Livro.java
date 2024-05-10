@@ -8,7 +8,7 @@ public class Livro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_livro")
+    @Column(name = "idLivro")
     private Long idLivro;
 
     @Column(name = "titulo", nullable = false)
@@ -20,7 +20,7 @@ public class Livro {
     @Column(name = "preco", nullable = false)
     private String preco;
 
-    @Column(name = "link_imagem", nullable = false)
+    @Column(name = "linkImagem", nullable = false)
     private String linkImagem;
 
     public Long getIdLivro() {
