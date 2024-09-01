@@ -2,8 +2,6 @@ package dev.prpires66.domain.model;
 
 import jakarta.persistence.*;
 
-import java.nio.channels.FileChannel;
-
 @Entity
 @Table(name = "funcionarios")
 public class Funcionario {
@@ -54,7 +52,3 @@ public class Funcionario {
         this.senha = senha;
     }
 }
-
-
-
-

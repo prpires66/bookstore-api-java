@@ -1,4 +1,4 @@
-package dev.prpires66.santanderdevweek2023;
+package dev.prpires66.bookstoreapijava;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

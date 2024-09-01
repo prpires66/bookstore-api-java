@@ -65,3 +65,32 @@ Esta API ficará disponível no Railway por um período de tempo limitado, mas e
 Aos interessados no desenvolvimento da tela inicial do App do Santander (Figma) em Angular, Android, iOS ou Flutter... Caso a URL produtiva não esteja mais disponível, deixamos um Backup no GitHub Pages, é só dar um GET lá 😘
 - URL de Produção: https://sdw-2023-prd.up.railway.app/users/1
 - Mock (Backup): https://digitalinnovationone.github.io/bookstore-api-java-api/mocks/find_one.json
+
+### EXECUTAR
+
+Atualizar as dependências do projeto:
+
+Para garantir que todas as dependências estão atualizadas e qualquer mudança no arquivo build.gradle seja aplicada, execute:
+
+ ```bash
+./gradlew.bat build
+ ```
+Esse comando irá compilar o projeto, rodar os testes, e preparar o projeto para ser executado. Ele verifica se há dependências que precisam ser baixadas ou atualizadas.
+
+Limpar o projeto:
+
+Se você quiser garantir que todas as compilações anteriores sejam removidas, você pode executar o comando clean antes de build:
+
+ ```bash
+./gradlew.bat clean
+./gradlew.bat build
+ ```
+O comando clean remove todos os arquivos compilados previamente, permitindo uma compilação "limpa".
+
+Depois de garantir que o projeto está atualizado e compilado corretamente, você pode executar:
+
+ ```bash
+./gradlew.bat bootRun
+```
+
+Esses passos ajudam a garantir que todas as dependências estão atualizadas e que o projeto é compilado a partir do zero, minimizando possíveis problemas de execução.
